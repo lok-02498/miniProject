@@ -1,0 +1,2 @@
+# miniProject
+inventory management system
