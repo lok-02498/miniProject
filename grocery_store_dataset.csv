@@ -1,0 +1,49 @@
+Product,Category,Price,Stock,Supplier,id,Expiration Date
+Brinjal,Vegetables,48.15,9,"Arnold, Russell and Peterson",e44278ed-b614-4c17-bdc7-3c8c660a6ea0,2026-05-11
+Milk,Bakery,67.0,325,"Jackson, Rhodes and Stewart",c2a2006f-1b5a-4f83-afe1-f1bd83669d54,2025-04-17
+Carrot,Grains,25.02,478,Navarro-Murray,f4bdb7ed-e3f8-4e9b-8128-03e3b25a351e,2025-04-21
+Coconut Milk,Beverages,38.77,467,Clark Inc,3a40206c-e444-48cf-91c3-d30bf29be9d1,2025-04-17
+Carrot,Grains,4.63,319,Shaw Group,a27f31ee-0273-455b-bdce-63c60fcf7b28,2026-03-04
+Potato,Vegetables,37.79,58,Alexander PLC,c4b901fb-6fc8-4622-82a7-42e029e05eef,2026-03-04
+Cheetos puffs,Snacks,21.16,403,Johnson-Smith,867f68cd-0f9a-420b-aadd-0ae6ac354de9,2026-03-04
+Uncle Chips,Snacks,41.29,48,Baldwin and Sons,44c86e65-b065-46da-adff-33bab91d5b18,2026-03-04
+Almond Milk,Beverages,36.84,441,"Garza, Farrell and Perry",566c58be-71dc-451a-a413-f305fd1b7676,2026-03-04
+Apple juice,Beverages,1.59,447,Jarvis Ltd,6cead810-ac6f-4df4-a5a7-4769520d6d32,2026-03-04
+Parle Monaco,Snacks,28.81,224,Jordan and Sons,89d2b97b-7d74-4a76-beb5-2454f7812b46,2026-03-04
+Real juice,Beverages,13.26,67,Cannon-Pham,c28ed04c-747f-4a3c-8ff6-05aa8c7d7476,2026-04-21
+Milk,Grains,14.22,7,Greene and Sons,2a825206-4b3a-4afa-b5f8-caf36b3e989e,2026-03-31
+Chips,Grains,38.66,212,"Scott, Davis and Garcia",ca465a93-8f97-4a7e-95eb-07bef7bd07df,2026-03-04
+Mango Juice,Beverages,1.18,301,Gibbs-Vazquez,be29a099-6ca0-4820-8bc3-3cc33309d628,2026-03-04
+Haldiram's Gup Shup peanut,Snacks,43.39,397,Jackson and Sons,78f49c2a-e649-42b4-adc6-badf37f15ecb,2026-03-04
+Chips,Fruits,6.89,81,"Smith, Ramos and Wilson",117488b1-a72e-4f73-a6fe-aa91aa71909d,2026-03-04
+Carrot,Grains,26.71,328,Joseph-Smith,2960c552-e1eb-4fe4-bc8e-aa7a7d7aa2fb,2026-03-31
+Doritos Cheese Nachos,Snacks,34.3,11,"Powell, Gilmore and Potts",3d7cea4d-153d-4117-a26e-a8074a735d5e,2026-03-04
+Red bull,Beverages,31.32,237,Clark and Sons,2b38b342-6da6-4f64-9806-79bc3541387f,2026-03-04
+Bread,Fruits,22.57,500,"Gutierrez, Howard and Foster",5a7c9673-932b-4bf3-b5ef-5e4e361ab552,2026-04-28
+Tomato,Vegetables,43.02,410,Beard-Bailey,5f877ae2-7ad2-410e-a240-be79f69e9a84,2026-03-04
+Apple,Fruits,47.46,160,Barnes-Kennedy,acb08adc-a14e-4a10-b21e-4b509fe9dc9f,2026-03-31
+Juice,Fruits,2.28,200,"Williams, Quinn and Kim",0f5424fe-6fb1-449b-9950-63752a5d55c2,2026-03-04
+Milk,Grains,48.33,29,Vaughn Inc,84316319-7b30-4708-ad37-aa0abe3a14fc,2026-03-04
+Chicken,Fruits,22.18,50,"Vincent, Wells and Hoffman",4130841d-92a9-4165-a65a-cee02a2a1b46,2026-03-04
+Bread,Bakery,27.49,365,Rodriguez and Sons,e47ddd96-a2e2-4701-b8d9-5d5c5a193f9a,2026-03-04
+Chips,Grains,47.75,155,Roberts-Garcia,10a9ed7f-87bb-4993-813a-8cc2e1ce74b0,2026-03-04
+Cauliflower,Vegetables,50.89,456,Beard-Bailey,856c4e03-9fdb-4de5-a763-391c6cc6dcb6,2026-03-04
+Banana,Fruits,0.5,100,Acme Fresh Fruits,a1b2c3d4-e5f6-7890-1234-567890abcdef,2026-05-20
+Apple,Fruits,0.75,150,Acme Fresh Fruits,b2c3d4e5-f678-9012-3456-7890abcdefa1,2026-05-22
+Milk,Dairy,2.5,78,Dairy Farms Inc.,c3d4e5f6-7890-1234-5678-90abcdefa1b2,2026-05-25
+Bread,Bakery,2.0,75,Baker's Delight,d4e5f678-9012-3456-7890-abcdefa1b2c3,2026-05-28
+Eggs,Dairy,3.0,3,Dairy Farms Inc.,e5f67890-1234-5678-90ab-cdefa1b2c3d4,2026-06-01
+Chicken Breast,Meat,4.0,20,Premium Meats,f6789012-3456-7890-abcd-efa1b2c3d4e5,2026-06-05
+Ground Beef,Meat,5.0,15,Premium Meats,78901234-5678-9012-3456-7890abcdefa1,2026-06-08
+Salmon Fillet,Seafood,10.0,10,Ocean Catch,89012345-6789-0123-4567-890abcdefa1b2,2026-06-10
+Shrimp,Seafood,8.0,20,Ocean Catch,90123456-7890-1234-5678-90abcdefa1b2,2026-06-12
+Pasta,Grains,1.5,100,Grain Goods Co.,01234567-8901-2345-6789-0abcdefa1b2c3,2026-06-15
+Rice,Grains,1.0,200,Grain Goods Co.,12345678-9012-3456-7890-abcdefa1b2c3,2026-06-18
+Carrot,Vegetables,0.8,120,Fresh Veggies,23456789-0123-4567-890a-bcdefa1b2c3d,2026-05-24
+Broccoli,Vegetables,1.2,80,Fresh Veggies,34567890-1234-5678-90ab-cdefa1b2c3d4,2026-05-27
+Yogurt,Dairy,2.0,60,Dairy Farms Inc.,45678901-2345-6789-0abc-defa1b2c3d4e,2026-06-03
+Cheddar Cheese,Dairy,4.5,40,Dairy Farms Inc.,56789012-3456-7890-abcd-efa1b2c3d4e5,2026-06-07
+Chocolate Cake,Bakery,3.0,30,Baker's Delight,67890123-4567-8901-2345-67890abcdefa1,2026-06-11
+Croissant,Bakery,1.5,50,Baker's Delight,78901234-5678-9012-3456-7890abcdefa1,2026-06-14
+Apple Juice,Beverages,3.0,100," ""Juice World""", 89012345-6789-0123-4567-890abcdefa1b2, 2026-06-20
+bread,Bakery,65,677,Bakers delight,f97f536b-2f97-4af1-bf3c-b3aaa08fffb9,2025-04-15

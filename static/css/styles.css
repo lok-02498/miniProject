@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://th.bing.com/th/id/R.76fe2afc065d800c4df57ab3fa174c47?rik=rnFoo%2fJ%2bGrZ6wQ&riu=http%3a%2f%2fevolutionarydesigns.net%2fphotography%2fwp-content%2fuploads%2f2011%2f10%2fstore-1-vintage-2.jpg&ehk=ETHaIJufXT%2b54mshlzPrHH2B%2funrjDK2F1jOU24%2b3vM%3d&risl=&pid=ImgRaw&r=0');
+    margin: 0;
+    padding: 0;
+    display: flex; /* Added to center the box */
+    justify-content: center; /* Added to center the box */
+    align-items: center; /* Added to center the box */
+    min-height: 100vh; /* Added to center the box */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background: rgb(255, 225, 225);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #7b5bff;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ff97f5;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #23b949;
+    text-align: left;
+    padding: 10px;
+}
+
+th {
+    background-color: #027cfe;
+    color: white;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0ae963;
+}
+
+.low-stock {
+    background-color: #f44663 !important; /* Light red for low stock */
+    /* Or use another visual cue like a border: */
+    /* border: 2px solid orange !important; */
+}
+
+.auth-container {
+    background-color: #fff;
+    padding: 30px; /* Increased padding */
+    border-radius: 10px; /* Increased border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow */
+    width: 350px; /* Increased width */
+    text-align: center;
+    margin: 20px auto; /* Added margin to center horizontally */
+}
+
+.auth-container h1 {
+    margin-bottom: 25px; /* Increased margin */
+    color: #333;
+    font-size: 2em; /* Increased font size */
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 12px; /* Increased padding */
+    margin-bottom: 15px; /* Increased margin */
+    border: 1px solid #ccc; /* Slightly darker border */
+    border-radius: 6px; /* Increased border radius */
+    box-sizing: border-box;
+    font-size: 1em; /* Increased font size */
+}
+
+.auth-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px; /* Increased padding */
+    border: none;
+    border-radius: 6px; /* Increased border radius */
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em; /* Increased font size */
+}
+
+.auth-button:hover {
+    background-color: #0056b3;
+}
+
+.flash {
+    padding: 12px; /* Increased padding */
+    margin-bottom: 15px; /* Increased margin */
+    border-radius: 6px; /* Increased border radius */
+    font-size: 1em; /* Increased font size */
+}
+
+.flash.error {
+    background-color: #ffe6e6;
+    color: #d32f2f;
+    border: 1px solid #d32f2f;
+}
+
+.flash.success {
+    background-color: #e8f5e9;
+    color: #43a047;
+    border: 1px solid #43a047;
+}
+
+.auth-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1em; /* Increased font size */
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}

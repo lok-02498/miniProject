@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #dashboard-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        .notification-section {
+            background-color: #fff;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .notification-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .notification-section h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .notification-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .notification-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .stock-level {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .expiry-date {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .low-stock {
+            color: #e67e22; /* Orange */
+        }
+
+        .expiring-soon {
+            color: #c0392b; /* Red */
+        }
+
+        p a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        p a:hover {
+            color: #2980b9;
+        }
+
+        /* Interactive Elements */
+        .notification-item:hover {
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .notification-section h2 span {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: white;
+        }
+
+        .notification-section h2 .low-stock {
+            background-color: #e67e22;
+        }
+
+        .notification-section h2 .expiring-soon {
+            background-color: #c0392b;
+        }
+
+        /* Animation for new notifications (optional - requires JS to trigger) */
+        .new-notification {
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="dashboard-container">
+        <h1><i class="fas fa-tachometer-alt"></i> Inventory Dashboard</h1>
+
+        <div class="notification-section" style="border-left-color: #e67e22;">
+            <h2><span class="low-stock"><i class="fas fa-exclamation-triangle"></i> Low Stock Items</span></h2>
+            <ul class="notification-list" id="low-stock-list">
+                {% if notifications.low_stock %}
+                    {% for item in notifications.low_stock %}
+                        <li class="notification-item">
+                            <span class="product-name">{{ item.Product }}</span>
+                            <span class="stock-level">Stock: <span class="low-stock">{{ item.Stock }}</span></span>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <li class="notification-item">No low stock items.</li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="notification-section" style="border-left-color: #c0392b;">
+            <h2><span class="expiring-soon"><i class="fas fa-hourglass-half"></i> Expiring Soon Items</span></h2>
+            <ul class="notification-list" id="expiring-soon-list">
+                {% if notifications.expiring_soon %}
+                    {% for item in notifications.expiring_soon %}
+                        <li class="notification-item">
+                            <span class="product-name">{{ item.Product }}</span>
+                            <span class="expiry-date">Expires: <span class="expiring-soon">{{ item['Expiration Date'] }}</span></span>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <li class="notification-item">No items expiring soon.</li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <p><a href="/"><i class="fas fa-arrow-left"></i> Back to Inventory</a></p>
+    </div>
+
+    <script src="https://kit.fontawesome.com/your_fontawesome_kit_id.js" crossorigin="anonymous"></script>
+    <script src="/static/dashboard.js"></script>
+    <script>
+        // Optional JavaScript for more interactivity (e.g., marking as read)
+        document.addEventListener('DOMContentLoaded', function() {
+            const notificationLists = document.querySelectorAll('.notification-list');
+            notificationLists.forEach(list => {
+                list.addEventListener('click', function(event) {
+                    if (event.target.classList.contains('notification-item')) {
+                        event.target.style.backgroundColor = '#e0f7fa'; // Example: Mark as seen
+                        // You could also make an AJAX call to the backend to update the notification status
+                    }
+                });
+            });
+        });
+
+        // Example of how you might add a "new" class (requires backend logic and potentially polling/websockets)
+        // const firstLowStockItem = document.querySelector('#low-stock-list .notification-item');
+        // if (firstLowStockItem) {
+        //     firstLowStockItem.classList.add('new-notification');
+        // }
+    </script>
+</body>
+</html>

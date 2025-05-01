@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Inventory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="https://unpkg.com/quagga@0.12.1/dist/quagga.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Grocery Stock Inventory Management</h1>
+
+        <div class="controls">
+            <input type="text" id="search" placeholder="Search by product name...">
+            <button id="downloadPdfBtn"><a href="/reports/inventory_pdf" style="color:white;text-decoration:none;">Download PDF Report</a></button>
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+            </select>
+            <button id="addItemBtn">Add Item</button>
+            <button id="viewDashboardBtn"><a href="/dashboard">View Dashboard</a></button>
+            <button id="viewVisualizationsBtn"><a href="/visualizations" style="color:white;text-decoration:none;">View Visualizations</a></button>
+            <button id="predictDemandBtn">Predict Demand (Example)</button>
+            <div id="demandPredictionResult"></div>
+            
+             {% if session['username'] %}
+                <a href="/logout">Logout</a>
+            {% endif %}
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Supplier</th>
+                    <th>Actions</th>
+                    <th>Expiration Date</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTable">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const predictDemandBtn = document.getElementById('predictDemandBtn');
+            const demandPredictionResultDiv = document.getElementById('demandPredictionResult');
+
+            salesButton.addEventListener('click', () => {
+                fetch('/sales')
+            })
+            if (predictDemandBtn && demandPredictionResultDiv) {
+                predictDemandBtn.addEventListener('click', () => {
+                    const productName = 'Example Product'; // Replace with dynamic product selection
+                    const historicalData = [10, 12, 15, 11, 13]; // Replace with actual historical data
+
+                    fetch('/predict_demand', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ product_name: productName, historical_data: historicalData }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            console.error("Error predicting demand:", data.error);
+                            demandPredictionResultDiv.textContent = `Error: ${data.error}`;
+                        } else {
+                            console.log("Predicted demand:", data.predicted_demand);
+                            demandPredictionResultDiv.textContent = `Predicted demand for ${data.product_name}: ${data.predicted_demand}`;
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        demandPredictionResultDiv.textContent = `Error: ${error}`;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

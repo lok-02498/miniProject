@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Visualizations</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Data Visualizations</h1>
+        <div class="visualization">
+            <h2>Category Distribution</h2>
+            <img src="data:image/png;base64,{{ img1 }}" alt="Category Distribution">
+        </div>
+        <div class="visualization">
+            <h2>Price Distribution</h2>
+            <img src="data:image/png;base64,{{ img2 }}" alt="Price Distribution">
+        </div>
+        <div class="visualization">
+            <h2>Stock Levels</h2>
+            <img src="data:image/png;base64,{{ img3 }}" alt="Stock Levels">
+        </div>
+        <div class="visualization">
+            <h2>Price vs. Stock</h2>
+            <img src="data:image/png;base64,{{ img4 }}" alt="Price vs. Stock">
+        </div>
+        <p><a href="{{ url_for('index') }}">Back to Inventory</a></p>
+    </div>
+</body>
+</html>
