@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const addItemBtn = document.getElementById("addItemBtn");
     addItemBtn.addEventListener("click", addNewRow);
   
-    // BARCODE CODE REMOVED
+    
   });
   
   function calculateDaysRemaining(expirationDate) {
@@ -150,15 +150,15 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(response => {
         if (!response.ok) {
           return response.json().then(err => {
-            throw new Error(err.message || "Failed to delete item"); // Ensure there's a message
+            throw new Error(err.message || "Failed to delete item"); 
           });
         }
         row.remove();
-        alert("Item deleted successfully!"); // Success Message
+        alert("Item deleted successfully!"); 
       })
       .catch(error => {
         console.error("Error deleting item: ", error);
-        alert("Error deleting item: " + error.message); // Error Message
+        alert("Error deleting item: " + error.message); 
       });
   }
   
